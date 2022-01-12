@@ -57,5 +57,11 @@ get.addEventListener('click',
 
 		document.getElementById('ticket-price').innerText = ticketPrice.toFixed(2) + '€';
 		console.log('Prezzo del biglietto scontato: ', ticketPrice.toFixed(2), '€');
+
+		//# Calcolo carrozza
+		document.getElementById('wagon').innerText = Math.floor((Math.random() * 6) + 1);
+
+		//# Calcolo codice CP
+		document.getElementById('cp-code').innerText = Math.floor((Math.random() * 100000));
 	});
 
