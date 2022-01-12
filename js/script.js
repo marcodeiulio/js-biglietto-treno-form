@@ -10,9 +10,21 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 const alertNumber = `Il valore ammesso non è un numero!
 Per favore, inserire solo numeri.`;
 
+const alertName = 'Dati inseriti non validi.'
+
+const userName = prompt('Inserire nome e cognome.', 'Gennarino Gennaretti').trim();
+
+if (!userName.length) {
+	alert(alertName);
+	location.reload();
+} else {
+	document.getElementById('user-name').innerText = userName;
+	console.log('Nome utente: ' + userName);
+}
+
 const userAge = parseInt(prompt(`Quanti anni hai?
 Solo numeri ammessi.`, '25').trim());
-console.log('userAge: ', userAge);
+console.log('Età utente: ', userAge);
 
 if (isNaN(userAge)) {
 	alert(alertNumber);
@@ -25,7 +37,7 @@ if (isNaN(userAge)) {
 const userDistance = parseInt(prompt(`Per quanti chilometri vuoi viaggiare?
 Inserire un valore espresso in KM.
 Solo numeri ammessi.`, '50').trim());
-console.log('userDistance: ', userDistance);
+console.log('Distanza da percorrere: ', userDistance);
 
 if (isNaN(userDistance)) {
 	alert(alertNumber);
@@ -36,7 +48,7 @@ if (isNaN(userDistance)) {
 }
 
 let ticketPrice = userDistance * 0.21;
-console.log('ticket-price: ', ticketPrice);
+console.log('Prezzo del biglietto: ', ticketPrice);
 
 if (userAge < 18) {
 	ticketPrice = ticketPrice * 0.80;
@@ -50,4 +62,4 @@ if (userAge < 18) {
 
 const priceMessage = ticketPrice.toFixed(2) + '€';
 document.getElementById('ticket-price').innerText = priceMessage;
-console.log('Discounted ticket-price: ', ticketPrice.toFixed(2), '€');
+console.log('Prezzo del biglietto scontato: ', ticketPrice.toFixed(2), '€');
